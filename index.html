@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Andrei Jasmine Lopez</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <style>
@@ -16,6 +12,8 @@
             --rose: #F5CBCB;
             --soft-pink: #F5CBCB;
             --peach: #FFE6D4;
+            --dark-rose: #C98787;
+            --darker-rose: #B97878;
             --dark: #343033;
         }
 
@@ -27,27 +25,21 @@
         body {
             color: var(--dark);
             background-color: #FFFFFF;
-            font-family: "Poppins", sans-serif !important;
+            font-family: Verdana, sans-serif;
         }
-        
+
         h1,
         h2,
         h3,
         h4,
         h5,
         h6 {
-            font-family: "Lora", serif !important;
+            font-family: Georgia, "Times New Roman", serif;
         }
 
         header {
             background-color: #FFFFFF;
             border-bottom: 1px solid var(--soft-pink);
-        }
-        
-        h1,
-        h2,
-        h3 {
-            font-family: "Lora", serif;
         }
 
         .nav-underline .nav-link {
@@ -57,12 +49,12 @@
         }
 
         .nav-underline .nav-link:hover {
-            color: #B97878;
+            color: var(--darker-rose);
             transform: translateY(-2px);
         }
 
         .nav-underline .nav-link.active {
-            color: #B97878;
+            color: var(--darker-rose);
         }
 
         .intro-section {
@@ -78,20 +70,25 @@
             transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
+        .profile-pic:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(100, 70, 70, 0.15);
+        }
+
         .text-rose {
-            color: #B97878 !important;
+            color: var(--darker-rose) !important;
         }
 
         .btn-rose {
-            background-color: #C98787;
-            border-color: #C98787;
+            background-color: var(--dark-rose);
+            border-color: var(--dark-rose);
             color: #FFFFFF;
             transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
         }
 
         .btn-rose:hover {
-            background-color: #B97878;
-            border-color: #B97878;
+            background-color: var(--darker-rose);
+            border-color: var(--darker-rose);
             color: #FFFFFF;
             transform: translateY(-2px);
             box-shadow: 0 5px 12px rgba(100, 70, 70, 0.15);
@@ -102,14 +99,14 @@
         }
 
         .btn-outline-rose {
-            color: #B97878;
-            border-color: #C98787;
+            color: var(--darker-rose);
+            border-color: var(--dark-rose);
             transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
         }
 
         .btn-outline-rose:hover {
-            background-color: #C98787;
-            border-color: #C98787;
+            background-color: var(--dark-rose);
+            border-color: var(--dark-rose);
             color: #FFFFFF;
             transform: translateY(-2px);
         }
@@ -130,10 +127,10 @@
         }
 
         .skill-badge {
-            background-color: #C98787;
+            background-color: var(--dark-rose);
             color: #FFFFFF;
-            font-size: 1.25rem;
-            padding: 14px 24px;
+            font-size: 1.1rem;
+            padding: 12px 20px;
             border-radius: 10px;
             margin: 6px !important;
             display: inline-block;
@@ -155,7 +152,7 @@
         }
 
         .project-card:hover {
-            border-color: #C98787;
+            border-color: var(--dark-rose);
             transform: translateY(-6px);
             box-shadow: 0 8px 20px rgba(100, 70, 70, 0.12);
         }
@@ -169,8 +166,19 @@
         }
 
         .form-control:focus {
-            border-color: #C98787;
+            border-color: var(--dark-rose);
             box-shadow: 0 0 0 0.2rem rgba(201, 135, 135, 0.2);
+        }
+
+        .github-link {
+            color: var(--darker-rose);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .github-link:hover {
+            color: var(--dark-rose);
+            text-decoration: underline;
         }
 
         footer {
@@ -203,174 +211,183 @@
                 transform: translateY(0);
             }
         }
+
+        @media (max-width: 767px) {
+            .profile-pic {
+                width: 100%;
+                max-width: 300px;
+                height: 300px;
+            }
+        }
     </style>
   </head>
 
   <body id="top">
 
-<header>
-    <nav class="py-3">
-        <div class="container">
-            <ul class="nav nav-underline justify-content-center">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#about">About Me</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#skills">Skills</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#projects">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
-
-<main>
-
-<section id="about" class="py-5 intro-section">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-5 text-center mb-4 mb-md-0">
-                <img src="myphoto.JPEG" class="img-fluid profile-pic" alt="Profile photo of Andrei Jasmine Lopez">
+    <header>
+        <nav class="py-3">
+            <div class="container">
+                <ul class="nav nav-underline justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#about">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
             </div>
+        </nav>
+    </header>
 
-            <div class="col-md-7">
-                <p class="text-rose fw-semibold">BS INFORMATION SYSTEMS STUDENT</p>
-                <h1>Hi, I'm Andrei Jasmine Lopez</h1>
-                <h2 class="h4 mt-3 fw-bold">About Me</h2>
-                <p>I am a BS Information Systems student at De La Salle-College of Saint Benilde - Antipolo. I like exploring how technology can be used to solve problems and make tasks easier. I enjoy learning new skills, working with others, and applying what I learn in school through different projects.</p>
-            </div>
-        </div>
-    </div>
-</section>
+    <main>
 
-<section id="skills" class="py-5 skills-section">
-    <div class="container">
-        <h2 class="text-center mb-4 fw-bold">Skills</h2>
+        <section id="about" class="py-5 intro-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-5 text-center mb-4 mb-md-0">
+                        <img src="myphoto.JPEG" class="img-fluid profile-pic" alt="Profile photo of Andrei Jasmine Lopez">
+                    </div>
 
-        <div class="text-center">
-            <span class="badge skill-badge">Java</span>
-            <span class="badge skill-badge">SQLite</span>
-            <span class="badge skill-badge">Canva</span>
-            <span class="badge skill-badge">Microsoft Office</span>
-            <span class="badge skill-badge">Google Workspace</span>
-            <span class="badge skill-badge">SAP Business One</span>
-        </div>
-    </div>
-</section>    
+                    <div class="col-md-7">
+                        <p class="text-rose fw-semibold">BS INFORMATION SYSTEMS STUDENT</p>
+                        <h1>Hi, I'm Andrei Jasmine Lopez</h1>
+                        <h2 class="h4 mt-3 fw-bold">About Me</h2>
+                        <p>I am a BS Information Systems student at De La Salle-College of Saint Benilde - Antipolo. I like exploring how technology can be used to solve problems and make tasks easier. I enjoy learning new skills, working with others, and applying what I learn in school through different projects.</p>
 
-<section id="projects" class="py-5 projects-section">
-    <div class="container">
-        <h2 class="text-center mb-4 fw-bold">Projects & Accomplishments</h2>
-
-        <div class="row g-4">
-
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 project-card">
-                    <div class="card-body">
-                        <h3 class="h5 card-title">FurEver Pet Adoption System</h3>
-                        <p class="card-text">A pet adoption system created using Java, Swing, and SQLite.</p>
-                        <a href="#skills" class="btn btn-rose">View Project</a>
+                        <p class="mt-3">
+                            GitHub:
+                            <a href="https://github.com/andreijasminelopez" target="_blank" class="github-link">andreijasminelopez</a>
+                        </p>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 project-card">
-                    <div class="card-body">
-                        <h3 class="h5 card-title">Hotel Guest System</h3>
-                        <p class="card-text">A Java-based system for managing hotel guest and room information.</p>
-                        <a href="#skills" class="btn btn-rose">View Project</a>
-                    </div>
+        <section id="skills" class="py-5 skills-section">
+            <div class="container">
+                <h2 class="text-center mb-4 fw-bold">Skills</h2>
+
+                <div class="text-center">
+                    <span class="badge skill-badge">Java</span>
+                    <span class="badge skill-badge">SQLite</span>
+                    <span class="badge skill-badge">Canva</span>
+                    <span class="badge skill-badge">Microsoft Office</span>
+                    <span class="badge skill-badge">Google Workspace</span>
+                    <span class="badge skill-badge">SAP Business One</span>
                 </div>
             </div>
+        </section>
 
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 project-card">
-                    <div class="card-body">
-                        <h3 class="h5 card-title">Payroll System</h3>
-                        <p class="card-text">A payroll system developed using Java and SQLite.</p>
-                        <a href="#skills" class="btn btn-rose">View Project</a>
+        <section id="projects" class="py-5 projects-section">
+            <div class="container">
+                <h2 class="text-center mb-4 fw-bold">Projects & Accomplishments</h2>
+
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card h-100 project-card">
+                            <div class="card-body">
+                                <h3 class="h5 card-title">FurEver Pet Adoption System</h3>
+                                <p class="card-text">A pet adoption system created using Java, Swing, and SQLite.</p>
+                                <a href="#skills" class="btn btn-rose">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card h-100 project-card">
+                            <div class="card-body">
+                                <h3 class="h5 card-title">Hotel Guest System</h3>
+                                <p class="card-text">A Java-based system for managing hotel guest and room information.</p>
+                                <a href="#skills" class="btn btn-rose">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card h-100 project-card">
+                            <div class="card-body">
+                                <h3 class="h5 card-title">Payroll System</h3>
+                                <p class="card-text">A payroll system developed using Java and SQLite.</p>
+                                <a href="#skills" class="btn btn-rose">View Project</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-        </div>
-
-        <div class="text-center mt-4">
-            <a href="#top" class="btn btn-outline-rose">Back to Top</a>
-        </div>
-    </div>
-</section>  
-
-<section id="contact" class="py-5 contact-section">
-    <div class="container">
-        <h2 class="text-center mb-4 fw-bold">Contact Me</h2>
-
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-8">
-
-                <form>
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter your name">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-rose">Send Message</button>
-                </form>
 
                 <div class="text-center mt-4">
-                    <a href="YOUR-LINKEDIN-LINK" class="btn btn-outline-rose" target="_blank">LinkedIn Profile</a>
+                    <a href="#top" class="btn btn-outline-rose">Back to Top</a>
                 </div>
-
             </div>
+        </section>
+
+        <section id="contact" class="py-5 contact-section">
+            <div class="container">
+                <h2 class="text-center mb-4 fw-bold">Contact Me</h2>
+
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8">
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-rose">Send Message</button>
+                        </form>
+
+                        <div class="text-center mt-4">
+                            <a href="YOUR-LINKEDIN-LINK" class="btn btn-outline-rose" target="_blank">LinkedIn Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-4 border-top">
+        <div class="container text-center">
+            <p class="mb-2">Connect with me</p>
+
+            <a href="https://github.com/andreijasminelopez" target="_blank">GitHub</a>
+            <span class="mx-2">|</span>
+            <a href="YOUR-LINKEDIN-LINK" target="_blank">LinkedIn</a>
+
+            <p class="mt-3 mb-0">&copy; 2026 Andrei Jasmine Lopez. All rights reserved.</p>
         </div>
-    </div>
-</section>
+    </footer>
 
-</main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwxHj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
-<footer class="py-4 border-top">
-    <div class="container text-center">
-        <p class="mb-2">Connect with me</p>
+    <script>
+        const navLinks = document.querySelectorAll(".nav-link");
 
-         <a href="https://github.com/andreijasminelopez" target="_blank">GitHub</a>
-        <a href="YOUR-LINKEDIN-LINK" target="_blank">LinkedIn</a>
+        navLinks.forEach(function(link) {
+            link.addEventListener("click", function() {
+                navLinks.forEach(function(item) {
+                    item.classList.remove("active");
+                });
 
-        <p class="mt-3 mb-0">&copy; 2026 Andrei Jasmine Lopez. All rights reserved.</p>
-    </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwxHj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-
-<script>
-    const navLinks = document.querySelectorAll(".nav-link");
-
-    navLinks.forEach(function(link) {
-        link.addEventListener("click", function() {
-
-            navLinks.forEach(function(item) {
-                item.classList.remove("active");
+                this.classList.add("active");
             });
-
-            this.classList.add("active");
         });
-    });
-</script>
+    </script>
 
   </body>
 </html>
