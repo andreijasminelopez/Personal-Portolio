@@ -5,15 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Andrei Jasmine Lopez</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+          rel="stylesheet">
 
     <style>
         :root {
             --rose: #F5CBCB;
             --soft-pink: #F5CBCB;
             --peach: #FFE6D4;
+            --rose-dark: #C98787;
+            --rose-darker: #B97878;
             --dark: #343033;
+            --light-text: #5D575A;
+            --white: #FFFFFF;
         }
+
+
+        /* GENERAL */
 
         html {
             scroll-behavior: smooth;
@@ -22,64 +33,174 @@
 
         body {
             color: var(--dark);
-            background-color: #FFFFFF;
-            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--white);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
         }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        section {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        /* NAVIGATION */
 
         header {
-            background-color: #FFFFFF;
+            background-color: var(--white);
             border-bottom: 1px solid var(--soft-pink);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        .nav-underline .nav-link {
+        .navbar {
+            min-height: 75px;
+        }
+
+        .navbar-brand {
+            color: var(--dark);
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            color: var(--rose-darker);
+        }
+
+        .nav-link {
             color: var(--dark);
             font-weight: 600;
+            margin-left: 8px;
+            margin-right: 8px;
+            position: relative;
             transition: color 0.3s ease, transform 0.2s ease;
         }
 
-        .nav-underline .nav-link:hover {
-            color: #B97878;
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 8px;
+            right: 8px;
+            bottom: 3px;
+            height: 2px;
+            background-color: var(--rose-dark);
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--rose-darker);
             transform: translateY(-2px);
         }
 
-        .nav-underline .nav-link.active {
-            color: #B97878;
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            transform: scaleX(1);
         }
+
+        .nav-link.active {
+            color: var(--rose-darker) !important;
+        }
+
+        .navbar-toggler {
+            border-color: var(--rose-dark);
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 0.2rem rgba(201, 135, 135, 0.2);
+        }
+
+
+        /* ABOUT */
 
         .intro-section {
             background-color: var(--soft-pink);
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+        }
+
+        .intro-label {
+            color: var(--rose-darker);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+
+        .intro-section h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .intro-section h2 {
+            font-weight: 700;
+        }
+
+        .intro-section p {
+            color: var(--light-text);
+            max-width: 650px;
         }
 
         .profile-pic {
-            width: 300px;
+            width: 400px;
             height: 300px;
             object-fit: cover;
             border: 10px solid var(--peach);
+            border-radius: 12px;
             transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
         .profile-pic:hover {
             transform: scale(1.03);
-            box-shadow: 0 8px 20px rgba(100, 70, 70, 0.15);
+            box-shadow: 0 10px 25px rgba(100, 70, 70, 0.15);
         }
 
-        .text-rose {
-            color: #B97878 !important;
+
+        /* BUTTONS */
+
+        .btn {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            border-radius: 8px;
         }
 
         .btn-rose {
-            background-color: #C98787;
-            border-color: #C98787;
-            color: #FFFFFF;
-            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+            background-color: var(--rose-dark);
+            border-color: var(--rose-dark);
+            color: var(--white);
+            transition: transform 0.2s ease,
+                        box-shadow 0.2s ease,
+                        background-color 0.3s ease;
         }
 
         .btn-rose:hover {
-            background-color: #B97878;
-            border-color: #B97878;
-            color: #FFFFFF;
+            background-color: var(--rose-darker);
+            border-color: var(--rose-darker);
+            color: var(--white);
             transform: translateY(-2px);
-            box-shadow: 0 5px 12px rgba(100, 70, 70, 0.15);
+            box-shadow: 0 6px 14px rgba(100, 70, 70, 0.15);
         }
 
         .btn-rose:active {
@@ -87,15 +208,17 @@
         }
 
         .btn-outline-rose {
-            color: #B97878;
-            border-color: #C98787;
-            transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
+            color: var(--rose-darker);
+            border-color: var(--rose-dark);
+            transition: transform 0.2s ease,
+                        background-color 0.3s ease,
+                        color 0.3s ease;
         }
 
         .btn-outline-rose:hover {
-            background-color: #C98787;
-            border-color: #C98787;
-            color: #FFFFFF;
+            background-color: var(--rose-dark);
+            border-color: var(--rose-dark);
+            color: var(--white);
             transform: translateY(-2px);
         }
 
@@ -103,81 +226,127 @@
             transform: scale(0.96);
         }
 
-        .intro-section h2,
-        .skills-section h2,
-        .projects-section h2,
-        .contact-section h2 {
-            font-weight: 700;
-        }
+
+        /* SKILLS */
 
         .skills-section {
             background-color: var(--peach);
         }
 
         .skill-badge {
-            background-color: #C98787;
-            color: #FFFFFF;
-            font-size: 1.25rem;
-            padding: 14px 24px;
-            border-radius: 10px;
+            background-color: var(--rose-dark);
+            color: var(--white);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 13px 21px;
+            border-radius: 9px;
             margin: 6px !important;
             display: inline-block;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: transform 0.2s ease,
+                        box-shadow 0.2s ease;
         }
 
         .skill-badge:hover {
             transform: translateY(-4px);
-            box-shadow: 0 6px 12px rgba(100, 70, 70, 0.15);
+            box-shadow: 0 7px 14px rgba(100, 70, 70, 0.15);
         }
 
+
+        /* PROJECTS */
+
         .projects-section {
-            background-color: #FFFFFF;
+            background-color: var(--white);
         }
 
         .project-card {
             border: 1px solid var(--soft-pink);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease,
+                        box-shadow 0.3s ease,
+                        border-color 0.3s ease;
         }
 
         .project-card:hover {
-            border-color: #C98787;
-            transform: translateY(-6px);
-            box-shadow: 0 8px 20px rgba(100, 70, 70, 0.12);
+            border-color: var(--rose-dark);
+            transform: translateY(-7px);
+            box-shadow: 0 10px 22px rgba(100, 70, 70, 0.12);
         }
+
+        .project-card .card-body {
+            padding: 25px;
+        }
+
+        .project-card .card-title {
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .project-card .card-text {
+            color: var(--light-text);
+            line-height: 1.65;
+        }
+
+
+        /* CONTACT */
 
         .contact-section {
             background-color: var(--soft-pink);
         }
 
+        .contact-box {
+            background-color: var(--white);
+            border: 1px solid rgba(201, 135, 135, 0.3);
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 7px 20px rgba(100, 70, 70, 0.08);
+        }
+
+        .form-label {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
         .form-control {
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            font-family: 'DM Sans', sans-serif;
+            border-color: #DDD0D0;
+            border-radius: 8px;
+            padding: 11px 14px;
+            transition: border-color 0.3s ease,
+                        box-shadow 0.3s ease;
         }
 
         .form-control:focus {
-            border-color: #C98787;
+            border-color: var(--rose-dark);
             box-shadow: 0 0 0 0.2rem rgba(201, 135, 135, 0.2);
         }
 
+
+        /* FOOTER */
+
         footer {
             background-color: var(--dark);
-            color: #FFFFFF;
+            color: var(--white);
         }
 
         footer a {
-            color: #FFFFFF;
+            color: var(--white);
             text-decoration: none;
-            transition: color 0.3s ease;
+            font-weight: 500;
+            transition: color 0.3s ease,
+                        transform 0.2s ease;
         }
 
         footer a:hover {
             color: var(--soft-pink);
         }
 
-        section {
-            animation: fadeIn 0.8s ease-in-out;
-        }
+
+        /* ANIMATION */
 
         @keyframes fadeIn {
+
             from {
                 opacity: 0;
                 transform: translateY(15px);
@@ -187,11 +356,55 @@
                 opacity: 1;
                 transform: translateY(0);
             }
-        }
-    </style>
-  </head>
 
-  <body id="top">
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 767px) {
+
+            .navbar-brand {
+                font-size: 1rem;
+            }
+
+            .intro-section {
+                min-height: auto;
+                padding-top: 70px !important;
+                padding-bottom: 70px !important;
+            }
+
+            .intro-section h1 {
+                font-size: 2.2rem;
+            }
+
+            .intro-label {
+                font-size: 0.75rem;
+                letter-spacing: 1.5px;
+            }
+
+            .profile-pic {
+                width: 100%;
+                max-width: 400px;
+                height: auto;
+                aspect-ratio: 4 / 3;
+            }
+
+            .contact-box {
+                padding: 25px;
+            }
+
+            .skill-badge {
+                font-size: 0.95rem;
+                padding: 11px 17px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body id="top">
 
 <header>
     <nav class="py-3">
@@ -220,7 +433,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-5 text-center mb-4 mb-md-0">
-                <img src="myphoto.JPEG" class="img-fluid rounded-circle profile-pic">
+                <img src="myphoto.JPEG" class="img-fluid profile-pic" alt="Profile photo of Andrei Jasmine Lopez">
             </div>
 
             <div class="col-md-7">
@@ -333,7 +546,7 @@
     <div class="container text-center">
         <p class="mb-2">Connect with me</p>
 
-        <a href="YOUR-GITHUB-LINK" class="me-3" target="_blank">GitHub</a>
+        <a href="https://github.com/andreijasminelopez" class="me-3" target="_blank">GitHub</a>
         <a href="YOUR-LINKEDIN-LINK" target="_blank">LinkedIn</a>
 
         <p class="mt-3 mb-0">&copy; 2026 Andrei Jasmine Lopez. All rights reserved.</p>
